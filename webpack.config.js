@@ -26,7 +26,8 @@ const config = {
       {
         loader: "babel-loader",                                                                                       // webpack will check babelrc file and compile it 
         test: /\.(js|jsx|tsx|ts)$/,
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        resolve: { extensions: ['', '.js', '.jsx', '.tsx'] }
       },
       {
         test: /\.html$/,                                                                                              // changing all your images references to the require
@@ -71,7 +72,7 @@ if(isProd) {
   config.optimization = { minimizer: [ '...', new CssMinimizerPlugin() ] };                                           // minimize css on prod mode
   config.plugins = [ ...config.plugins, new MiniCssExtractPlugin( { filename: "styles.[contenthash].css" } ) ]        // exctracts imported css/scss into seperate  files and bundles them
 } else {
-  config.devServer = { static: { directory: resolve(__dirname, "src") }, port: 5000 }                                 // initiate devserver on dev mode
+  config.devServer = { static: { directory: resolve(__dirname, "src") }, historyApiFallback: true, port: 5000 }       // initiate devserver on dev mode
 }
 
 // console.log(config)
