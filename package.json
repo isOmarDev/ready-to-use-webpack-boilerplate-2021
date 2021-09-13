@@ -1,13 +1,13 @@
 {
-  "name": "trendy-toys",
+  "name": "webpack-boilerplate",
   "version": "1.0.0",
-  "description": "React E-commerce webapp for toys",
+  "description": "Ready to use webpack boilerplate with comments for React/Typescript projects",
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --open",
     "build": "cross-env NODE_ENV=production webpack"
   },
-  "author": "omar & mohamed",
+  "author": "omar kamel",
   "license": "ISC",
   "browserslist": [
     "> 1%",
